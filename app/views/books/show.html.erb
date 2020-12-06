@@ -1,0 +1,38 @@
+
+  <div class="row">
+
+<div class="col-xs-3">
+<div class="left">
+  <div class="user-info">
+    <%= render 'users/new', user: @book.user %>
+  </div>
+  <div class="new-book">
+    <%= render 'books/new', book: @book %>
+  </div>
+
+</div>
+</div>
+
+<div class="col-xs-9">
+<h2>Book detail</h2>
+<table class="table table-striped">
+  <tbody>
+
+    <tr>
+      <td>
+        <%= attachment_image_tag @book.user, :profile_image, format: 'jpeg', fallback: "no_image.jpg", size: "30x30" %>
+        <%= link_to @book.user.name, "/users/#{@book.user.id}" %>
+      </td>
+      <td><%= link_to @book.title, book_path(@book.id) %></td>
+      <td><%= @book.body %></td>
+      <% if @book.user == current_user %>
+      <td><%= link_to "Edit", edit_book_path(@book.id) %></td>
+      <td><%= link_to "Destroy", book_path(@book.id), method: :delete, "data-confirm" => "本当に削除しますか？" %></td>
+      <% end %>
+    </tr>
+
+  </tbody>
+</table>
+</div>
+
+ </div>  <!-- この行を追加 -->
