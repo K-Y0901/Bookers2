@@ -16,7 +16,7 @@
       <span>Bookers</span>
       <div id="slidemenu">
   <ul class="nav navbar-nav navbar-right" data-hover="dropdown" data-animations="zoomIn fadeIn fadeInUp fadeIn">
-    
+
     <% if user_signed_in? %>
       <li class="button">
         <span class="glyphicon glyphicon-home" aria-hidden="true">
@@ -64,21 +64,17 @@
 </div>
 </div>
     </header>
-
-
-
-
-
-
-
-
-
-
     <div class="container">
-
+      
       <p><%= notice %></p>
-
+      
       <%= yield %>
+      <footer>
+        <div class="end">
+          <p>CopyRight Infratop.inc</p>
+        </div>
+　　　</footer>
+　　　
     </div>
 
   </body>
