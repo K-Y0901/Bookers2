@@ -8,6 +8,7 @@ class BooksController < ApplicationController
     @users=User.all
     @user=current_user
     @book=Book.new
+    
   end
 
   def show
@@ -15,6 +16,8 @@ class BooksController < ApplicationController
     @book = Book.find(params[:id])
     @users=User.all
     @books=Book.new
+    @book_comment = BookComment.new
+    @book_comments = BookComment.all
   end
 
   def new
@@ -77,3 +80,4 @@ class BooksController < ApplicationController
      params.require(:book).permit(:title, :body)
     end
 end
+
