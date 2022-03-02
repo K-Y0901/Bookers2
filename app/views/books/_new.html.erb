@@ -21,6 +21,11 @@
 
   <h4>Opinion</h4>
   <%= f.text_area :body %>
+  
+  
+  <h4>タグ追加</h4>
+    <%= f.label :tag_list, class: "sr-only control-label" %>
+    <%= text_field_tag 'book[tag_list]', book.tag_list.join(",") %><br>
 
   <%= f.submit 'Create Book' %>
 
